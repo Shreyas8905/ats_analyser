@@ -12,15 +12,11 @@ client = Groq(
 )
 
 def index(request):
-    """
-    Render the main HTML page for the resume analysis.
-    """
+ 
     return render(request, "index.html")
 
 def extract_text_from_pdf(pdf_file):
-    """
-    Extract text content from a PDF file.
-    """
+  
     try:
         pdf_reader = PdfReader(pdf_file)
         text = ""
@@ -32,9 +28,7 @@ def extract_text_from_pdf(pdf_file):
 
 @csrf_exempt
 def analyze_resume(request):
-    """
-    Analyze the uploaded resume using Groq API.
-    """
+ 
     if request.method == "POST" and request.FILES.get("resume"):
         try:
             # Extract job role and company from request
@@ -65,8 +59,7 @@ def analyze_resume(request):
 
             response_text = chat_completion.choices[0].message.content
 
-            # Simulate parsed Groq response (if Groq response is structured, adjust accordingly)
-            # Example: Parse response_text into score, description, and suggestions
+           
             return JsonResponse(
                 {
                     "success": True,
