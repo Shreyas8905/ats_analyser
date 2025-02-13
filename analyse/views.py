@@ -5,7 +5,7 @@ from django.views.decorators.csrf import csrf_exempt
 from groq import Groq
 from PyPDF2 import PdfReader
 
-groq_api_key = "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"
+groq_api_key = ""
 # Initialize Groq client with the API key
 client = Groq(
     api_key=  groq_api_key
